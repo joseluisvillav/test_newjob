@@ -1,0 +1,12 @@
+pares = [("PO-1001", "Create Purchase Order"), ("PO-1002", "Create Purchase Order"),
+         ("PO-1001", "Approve Purchase Order"), ("PO-1002", "Approve Purchase Order"),
+         ("PO-1001", "Receive Goods"), ("PO-1002", "Receive Invoice"),
+         ("PO-1002", "Receive Goods")]
+
+def variantes(pares):
+    mapeoCasos = {}
+    for a,b in pares :
+        mapeoCasos.setdefault(a,[]).append(b)
+    return {caso: " -> ".join(acts) for caso, acts in mapeoCasos.items()}
+
+print(variantes(pares))
