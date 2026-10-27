@@ -1,0 +1,12 @@
+pedidos = [("PO-1001", 4200), ("PO-1002", 12500), ("PO-1003", 8750), ("PO-1004", 950),
+           ("PO-1005", 3100), ("PO-1006", 15800), ("PO-1007", 2400), ("PO-1008", 6300),
+           ("PO-1009", 780), ("PO-1010", 11200)]
+
+def ordenes_grandes(pedidos, umbral=5000):
+    filtrados = [p for p in pedidos if p[1] > umbral]
+    filtrados_ordenados = sorted(filtrados, key = lambda p:p[1], reverse=True)
+    
+    return [f for f,g in filtrados_ordenados]
+    # return sorted([f for f,g in pedidos if g > umbral],reverse=False) # filtar y ordenar alfabeticamente los codigos filtrados
+
+print(ordenes_grandes(pedidos))
