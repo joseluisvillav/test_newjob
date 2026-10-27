@@ -1,0 +1,9 @@
+def clasificar_monto(monto):
+    if monto < 10000 :
+        a = 'bajo'
+    elif monto < 20000 :
+        a = 'medio'
+    else :
+        a = 'alto'
+    return a
+print(clasificar_monto(4200))
